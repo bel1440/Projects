@@ -49,17 +49,17 @@
                     <li class="contact-list-inf">
                         Discord:
                         <br>
-                        Nikita Belyaev#1234
+                        {{ discord }}
                     </li>
                     <li class="contact-list-inf">
                         Email:
                         <br>
-                        <a href="mailto:nik.belyaev2015@gmail.com">nik.belyaev2015@gmail.com</a>
+                        <a href="mailto:nik.belyaev2015@gmail.com">{{ mail }}</a>
                     </li>
                     <li class="contact-list-inf">
                         Adress:
                         <br>
-                        Gomel, Belarus
+                        {{ adress }}
                     </li>
                 </ul>
             </section>
@@ -69,50 +69,47 @@
             <section>
                 <ul class="education-list">
                     <li class="education-list-inf">
-                        2019-2023
+                        {{ education1.year }}
                         <br>
-                        Belorusian State Polytechnical College
+                        {{ education1.place }}
                     </li>
                     <li class="education-list-inf">
-                        2025
+                        {{ education2.year }}
                         <br>
-                        IT step school
+                        {{ education2.place }}
                     </li>
                 </ul>
             </section>
         </div>
         <div class="right-side">
             <section class="page-title">
-                <h1 class="main-title">Nikita Belyaev</h1>
-                <p>Student</p>
+                <h1 class="main-title">{{ name }}</h1>
+                <p>{{ job_title }}</p>
             </section>
             <section class="about-me" id="about me">
                 <h2 class="section-title">About me</h2>
-                <p>My name is Nikita, I was born in the city of Gomel, Belarus. I am 21 years old, I studied at school № 53 
-                    until the 7th grade, in the 8th grade I moved to school № 1 due to a move. After 9th grade, 
-                    I entered the Gomel State Polytechnic College and studied there for 4 years, specializing in “Equipment 
-                    Maintenance and Repair.” After college, he served in the army for a year and a half.
+                <p>{{ about.first }}
                     <br>
-                    After service, i am got a job at a Gomel chemical plant as a repairman and began training in it step on python-developer
+                    {{ about.second }}
                 </p>
             </section>
             <section class="skills" id="skills">
                 <h2 class="section-title">Skills</h2>   
                 <ul class="skills-list">
-                    <li>Python</li>
-                    <li>HTML5, CSS3</li>
-                    <li>English - Elementary (A1+,A2)</li>
+                    <li>{{ skills.first }}</li>
+                    <li>{{ skills.second }}</li>
+                    <li>{{ skills.third }}</li>
                 </ul>
             </section> 
             <section class="key-strengths" id="strengths">
                 <h2 class="section-title">Key strenghts</h2>
                 <ul class="key-strengths-list">
-                    <li>Hardworking</li>
-                    <li>Responsible</li>
-                    <li>Sociable</li>
-                    <li>Quick learner</li>
-                    <li>Goal-oriented</li>
-                    <li>Conscientious</li>
+                    <li>{{ strenghts.first }}</li>
+                    <li>{{ strenghts.second }}</li>
+                    <li>{{ strenghts.third }}</li>
+                    <li>{{ strenghts.fourth }}</li>
+                    <li>{{ strenghts.fifth }}</li>
+                    <li>{{ strenghts.sixth }}</li>
                 </ul>
             </section>
             <section class="code-example" id="code">
