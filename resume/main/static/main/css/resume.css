@@ -1,0 +1,211 @@
+.header{
+    background-color: #e6e6e6;
+}
+
+.nav_list{
+    display: flex;
+    justify-content: space-around;
+}
+
+.page{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 40px;
+    font-weight: 400;
+    color: black;
+}
+
+.left-side{
+    max-width: 25%;
+    color: white;
+    background-color: #2c323d;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+section {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+
+.section-title::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 36px;
+    background-color: #f2c100;
+}
+
+.section-title{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 0;
+    margin-bottom: 26px;
+    margin-top: 20px;
+    padding-left: 60px;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 600;
+}
+
+.contact-list{
+    margin-left: 20px;
+}
+
+.contact-list-inf{
+    margin-bottom: 20px;
+}
+
+.contact-list-inf a{
+    text-decoration-line: underline;
+}
+
+.education-list{
+    margin-left: 20px;
+}
+
+.education-list-inf{
+    margin-bottom: 20px;
+}
+
+.page-body a{
+    color: white;
+}
+
+.header a{
+    color:black
+}
+
+.page-title{
+    margin: 125px 80px 125px 60px;
+}
+
+.page-title p{
+    font-size: 20px;
+}
+
+.main-title{
+    margin: 0;
+    padding: 0;
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: 600;
+    color:black
+}
+
+.container{
+    display: flex;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+.right-side{
+    width: 100%;
+}
+
+.about-me p{
+    margin: 0 250px 0 60px;
+    padding: 0;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.about-me {
+    margin-bottom: 54px;
+}
+
+.skills {
+    margin-bottom: 54px;
+}
+
+.key-strengths {
+    margin-bottom: 54px;
+}
+
+.skills-list{
+    margin: 0 250px 0 60px;
+    padding: 0;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.skills-list li::before{
+    content: "•";
+}
+
+.skills-list li{
+    margin-bottom: 5px;
+}
+
+.key-strengths li::before{
+    content: "•";
+}
+
+.key-strengths li{
+    margin-bottom: 5px;
+}
+
+.key-strengths-list{
+    margin: 0 250px 0 60px;
+    padding: 0;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.code-example{
+    margin-bottom: 54px;
+}
+
+.code-example details{
+    margin: 0 250px 0 60px;
+}
+
+.my-projects{
+    margin-bottom: 150px;
+}
+
+.footer{
+    display: flex;
+    padding: 40px 60px 40px 60px;
+    color: white;
+    background-color: #1e1f23;
+    justify-content: space-around;
+    font-size: 20px;
+    align-self: center;
+}
+
+.footer a{
+    text-decoration: underline;
+}
+
+.img-git-footer{
+    position: absolute;
+    content: "";
+    left: 240px;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.img-itstep-footer{
+    position: absolute;
+    content: "";
+    left: 1300px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 70px; 
+    height: 50px; 
+    background-size: contain; 
+}
+
+
+
+
+
+
+

@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="page" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="{% static 'main/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/resume.css' %}">
+</head>
+<body class="page-body lock">
+    <header class="header">
+        <nav class="nav active">
+            <ul class="nav_list">
+                <li class="nav_items">
+                    <a href="#about me">About me</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#skills">Skills</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#strengths">Strenghts</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#code">Code</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#projects">Projects</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#contact">Contact</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#education">Education</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="left-side">
+            <section class="image">
+                <img src="{% static 'main/img/me.jpg' %}" alt="Фотография">
+            </section>
+            <section class="contact" id="contact">
+                <h2 class="section-title">Contact</h2>
+            </section>
+            <section>
+                <ul class="contact-list">
+                    <li class="contact-list-inf">
+                        Discord:
+                        <br>
+                        {{ discord }}
+                    </li>
+                    <li class="contact-list-inf">
+                        Email:
+                        <br>
+                        <a href="mailto:nik.belyaev2015@gmail.com">{{ mail }}</a>
+                    </li>
+                    <li class="contact-list-inf">
+                        Adress:
+                        <br>
+                        {{ adress }}
+                    </li>
+                </ul>
+            </section>
+            <section class=education" id="education"></section>
+                <h2 class="section-title">Education</h2>
+            </section>
+            <section>
+                <ul class="education-list">
+                    <li class="education-list-inf">
+                        {{ education1.year }}
+                        <br>
+                        {{ education1.place }}
+                    </li>
+                    <li class="education-list-inf">
+                        {{ education2.year }}
+                        <br>
+                        {{ education2.place }}
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div class="right-side">
+            <section class="page-title">
+                <h1 class="main-title">{{ name }}</h1>
+                <p>{{ job_title }}</p>
+            </section>
+            <section class="about-me" id="about me">
+                <h2 class="section-title">About me</h2>
+                <p>{{ about.first }}
+                    <br>
+                    {{ about.second }}
+                </p>
+            </section>
+            <section class="skills" id="skills">
+                <h2 class="section-title">Skills</h2>   
+                <ul class="skills-list">
+                    <li>{{ skills.first }}</li>
+                    <li>{{ skills.second }}</li>
+                    <li>{{ skills.third }}</li>
+                </ul>
+            </section> 
+            <section class="key-strengths" id="strengths">
+                <h2 class="section-title">Key strenghts</h2>
+                <ul class="key-strengths-list">
+                    <li>{{ strenghts.first }}</li>
+                    <li>{{ strenghts.second }}</li>
+                    <li>{{ strenghts.third }}</li>
+                    <li>{{ strenghts.fourth }}</li>
+                    <li>{{ strenghts.fifth }}</li>
+                    <li>{{ strenghts.sixth }}</li>
+                </ul>
+            </section>
+            <section class="code-example" id="code">
+                <h2 class="section-title">Code example</h2>
+                <details>
+                    <summary>
+                        From ServiceNow course
+                    </summary>
+                </details>
+            </section>
+            <section class="my-projects" id="projects">
+                <h2 class="section-title">My projects</h2>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <a class="footer_github" href="https://github.com/bel1440" target="_blank">
+            <img class="img-git-footer"   src="{% static 'main/img/github_logo.svg' %}" alt="github_logo">
+            My GitHub
+        </a>
+        <p class="footer_year">2025</p>
+        <a class="footer_school" href="https://gomel.itstep.by/" target="_blank">
+            <img class="img-itstep-footer"   src="{% static 'main/img/itstep_logo.png' %}" alt="itstep_logo">
+        </a>
+    </footer>
+</body>
+</html>
