@@ -1,0 +1,10 @@
+{% extends 'music/music.html' %}
+
+{% block content %}
+  {% for el in Types %}
+    <div class="TypeMusics" style="color: #e6e6e6; font-family: Arial25; font-size: 30px;">
+        <h3>{{ el.name_type }}</h3>
+        <p>{{ el.description }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}
