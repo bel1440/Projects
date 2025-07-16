@@ -2,9 +2,17 @@
 
 {% block content %}
   {% for el in Types %}
-    <div class="TypeMusics" style="color: #e6e6e6; font-family: Arial25; font-size: 30px;">
-        <h3>{{ el.name_type }}</h3>
-        <p>{{ el.description }}</p>
+    <div class="TypeMusics">
+        <h3>
+            <a href="{% url 'genre-details' el.id %}" class="btn btn-view">
+                {{ el.name_type }}
+            </a>
+        </h3>
+        <p>
+            <a href="{% url 'genre-details' el.id %}" class="btn btn-view">
+                {{ el.description }}
+            </a>
+        </p>
     </div>
     {% endfor %}
 {% endblock %}

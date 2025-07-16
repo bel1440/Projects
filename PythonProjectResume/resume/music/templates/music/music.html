@@ -7,8 +7,8 @@
     <title>Музыкальная платформа</title>
     <link rel="stylesheet" href="{% static 'music/css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'music/css/music.css' %}">
+    <link rel="icon" href="{% static 'music/img/icon.jpg' %}">
 </head>
-{% block content %}
 <body class="page-body">
     <header class="header">
         <nav class="nav_active">
@@ -26,6 +26,12 @@
                     <a class="nav_items_list" href="/music/add-music">Добавить трек</a>
                 </li>
                 <li class="nav_items">
+                    <a class="nav_items_list" href="/music/add-singers">Добавить исполнителя</a>
+                </li>
+                <li class="nav_items">
+                    <a class="nav_items_list" href="/music/add-genre">Добавить жанр</a>
+                </li>
+                <li class="nav_items">
                     <form class="search">
                         <input type="text" placeholder="Поиск...">
                         <button type="submit"></button>
@@ -34,6 +40,9 @@
             </ul>
         </nav>
     </header>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
 </body>
-{% endblock %}
 </html>

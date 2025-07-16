@@ -18,7 +18,25 @@ class SingersForm(ModelForm):
         model = Singers
         fields = ['name_singer']
 
+        widgets = {
+            'name_singer': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Имя исполнителя'
+            })
+        }
+
 class TypeMusicsForm(ModelForm):
     class Meta:
         model = TypeMusics
         fields = ['name_type', 'description']
+
+        widgets = {
+            'name_type': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Название жанра'
+            }),
+            'description': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Описание жанра'
+            })
+        }

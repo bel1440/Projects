@@ -1,11 +1,13 @@
 {% extends 'music/music.html' %}
+{% load static %}
 
 {% block content %}
     {% for el in Songss %}
-    <div class="Songs" style="color: #e6e6e6; font-family: Arial25; font-size: 30px;">
+    <div class="Songs">
         <h3>
-            {{ el.name_song }}
-            <a href="{% url 'music-details' el.id %}" class="btn btn-view" style="color: red; font-size; 15px;">Смотреть</a>
+            <a href="{% url 'music-details' el.id %}" class="btn btn-view">
+                {{ el.name_song }}
+            </a>
         </h3>
     </div>
     {% endfor %}
