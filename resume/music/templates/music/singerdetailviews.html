@@ -1,0 +1,9 @@
+{% extends 'music/music.html' %}
+
+{% block content %}
+  <div class="features">
+      <h1 class="form-control-view">{{ singers.name_singer }}</h1>
+      <a href="{% url 'singer-delete' singers.id %}" class="btn btn-danger">Удалить</a>
+      <a href="{% url 'singer-update' singers.id %}" class="btn btn-info">Редактировать</a>
+  </div>
+{% endblock %}

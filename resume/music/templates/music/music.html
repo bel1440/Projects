@@ -1,30 +1,48 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html class="page" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музыкальная платформа</title>
+    <link rel="stylesheet" href="{% static 'music/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'music/css/music.css' %}">
+    <link rel="icon" href="{% static 'music/img/icon.jpg' %}">
 </head>
-<header>
-    <h1>Музыка</h1>
-</header>
-<body>
-    {% for el in Types %}
-    <div class="TypeMusics">
-        <h3>{{ el.name_type }}</h3>
-        <p>{{ el.description }}</p>
-    </div>
-    {% endfor %}
-
-    {% for el in Singerss %}
-    <div class="Singers">
-        <h3>{{ el.name_singer }}</h3>
-    </div>
-    {% endfor %}
-
-    {% for el in Songss %}
-    <div class="Songs">
-        <h3>{{ el.name_song }}</h3>
-    </div>
-    {% endfor %}
+<body class="page-body">
+    <header class="header">
+        <nav class="nav_active">
+            <ul class="nav_list">
+                <li class="nav_items">
+                    <a class="nav_items_list" href="/music/list">Музыка</a>
+                </li>
+                <li class="nav_items">
+                    <a class="nav_items_list" href="/music/genre">Жанры</a>
+                </li>
+                <li class="nav_items">
+                    <a class="nav_items_list" href="/music/singers">Исполнители</a>
+                </li>
+                <li class="nav_items">
+                    <a class="nav_items_list" href="/music/add-music">Добавить трек</a>
+                </li>
+                <li class="nav_items">
+                    <a class="nav_items_list" href="/music/add-singers">Добавить исполнителя</a>
+                </li>
+                <li class="nav_items">
+                    <a class="nav_items_list" href="/music/add-genre">Добавить жанр</a>
+                </li>
+                <li class="nav_items">
+                    <form class="search">
+                        <input type="text" placeholder="Поиск...">
+                        <button type="submit"></button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
 </body>
 </html>

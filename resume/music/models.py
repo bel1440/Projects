@@ -4,6 +4,10 @@ class Singers(models.Model):
     name_singer = models.CharField('Имя исполнителя', max_length=250)
     def __str__(self):
         return self.name_singer
+
+    def get_absolute_url(self):
+        return f'/singers/{self.id}'
+
     class Meta:
         verbose_name = 'Исполнитель'
         verbose_name_plural = 'Исполнители'
@@ -13,6 +17,10 @@ class TypeMusics(models.Model):
     description = models.CharField('Описание', max_length=250)
     def __str__(self):
         return self.name_type
+
+    def get_absolute_url(self):
+        return f'/genre/{self.id}'
+
     class Meta:
         verbose_name = 'Жанр'
         verbose_name_plural = 'Жанры'
@@ -21,6 +29,10 @@ class Songs(models.Model):
     name_song = models.CharField('Название песни', max_length=250)
     def __str__(self):
         return self.name_song
+
+    def get_absolute_url(self):
+        return f'/list/{self.id}'
+
     class Meta:
         verbose_name = 'Песня'
         verbose_name_plural = 'Песни'
