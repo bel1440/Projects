@@ -23,15 +23,6 @@
                     <a class="nav_items_list" href="/music/singers">Исполнители</a>
                 </li>
                 <li class="nav_items">
-                    <a class="nav_items_list" href="/music/add-music">Добавить трек</a>
-                </li>
-                <li class="nav_items">
-                    <a class="nav_items_list" href="/music/add-singers">Добавить исполнителя</a>
-                </li>
-                <li class="nav_items">
-                    <a class="nav_items_list" href="/music/add-genre">Добавить жанр</a>
-                </li>
-                <li class="nav_items">
                     <form class="search">
                         <input type="text" placeholder="Поиск...">
                         <button type="submit"></button>
@@ -41,8 +32,23 @@
         </nav>
     </header>
     <main class="container">
-        {% block content %}
-        {% endblock %}
+        <div class="container-left">
+            <ul class="functions_list">
+                <li class="functions_items">
+                    <a class="functions_items_add" href="/music/add-music">Добавить трек</a>
+                </li>
+                <li class="functions_items">
+                    <a class="functions_items_add" href="/music/add-singers">Добавить исполнителя</a>
+                </li>
+                <li class="functions_items">
+                    <a class="functions_items_add" href="/music/add-genre">Добавить жанр</a>
+                </li>
+            </ul>
+        </div>
+        <div class="container-right" id="element">
+            {% block content-right %}
+            {% endblock %}
+        </div>
     </main>
 </body>
 </html>

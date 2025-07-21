@@ -4,9 +4,10 @@
   <div class="features">
     <form method="post" class="form-control">
       {% csrf_token %}
-      {{ form_music }}
+      {{ form.name_type }}
+      {{ form.description }}
       <span>{{ error }}</span>
-      <button class="btn btn-success" type="submit">Добавить</button>
+      <button class="btn btn-success" type="submit">Изменить</button>
     </form>
   </div>
 {% endblock %}

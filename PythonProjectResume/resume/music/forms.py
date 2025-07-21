@@ -1,4 +1,4 @@
-from .models import Singers, Songs, TypeMusics, Users
+from .models import Singers, Songs, TypeMusics
 from django.forms import ModelForm, TextInput
 
 class SongsForm(ModelForm):
@@ -9,7 +9,7 @@ class SongsForm(ModelForm):
         widgets = {
             'name_song': TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'название песни'
+                'placeholder': 'Название песни'
             })
         }
 

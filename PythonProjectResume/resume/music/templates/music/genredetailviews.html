@@ -1,8 +1,15 @@
 {% extends 'music/music.html' %}
+{% load static %}
 
-{% block content %}
+{% block content-right %}
   <div class="features">
       <h1 class="form-control-view">{{ genre.name_type }}</h1>
       <p class="form-control-view">{{ genre.description }}</p>
+      <a href="{% url 'genre-delete' genre.id %}" class="btn btn-danger">
+          <img src="{% static 'music/img/delete.png' %}" alt="Удалить">
+      </a>
+      <a href="{% url 'genre-update' genre.id %}" class="btn btn-info">
+          <img src="{% static 'music/img/update.svg' %}" alt="Редактировать">
+      </a>
   </div>
 {% endblock %}

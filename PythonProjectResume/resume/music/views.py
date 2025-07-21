@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from .models import Singers, Songs, TypeMusics, Users
+from .models import Singers, Songs, TypeMusics
 from .forms import SongsForm, SingersForm, TypeMusicsForm
-from django.views.generic import DetailView
+from django.views.generic import DetailView, UpdateView, DeleteView
 
 def music(request):
     Types = TypeMusics.objects.all()
@@ -44,6 +44,16 @@ class MusicDetailView(DetailView):
     template_name = 'music/musicdetailviews.html'
     context_object_name = 'songs'
 
+class MusicUpdateView(UpdateView):
+    model = Songs
+    template_name = 'music/music-update.html'
+    form_class = SongsForm
+
+class MusicDeleteView(DeleteView):
+    model = Songs
+    success_url = '/music/list/'
+    template_name = 'music/music-delete.html'
+
 def add_singer(request):
     error = ''
     if request.method == 'POST':
@@ -67,6 +77,17 @@ class SingerDetailView(DetailView):
     template_name = 'music/singerdetailviews.html'
     context_object_name = 'singers'
 
+class SingerUpdateView(UpdateView):
+    model = Singers
+    template_name = 'music/singer-update.html'
+
+    form_class = SingersForm
+
+class SingerDeleteView(DeleteView):
+    model = Singers
+    success_url = '/music/singers/'
+    template_name = 'music/singers-delete.html'
+
 def add_genre(request):
     error = ''
     if request.method == 'POST':
@@ -89,4 +110,15 @@ class GenreDetailView(DetailView):
     model = TypeMusics
     template_name = 'music/genredetailviews.html'
     context_object_name = 'genre'
+
+class GenreDeleteView(DeleteView):
+    model = TypeMusics
+    success_url = '/music/genre/'
+    template_name = 'music/genre-delete.html'
+
+class GenreUpdateView(UpdateView):
+    model = TypeMusics
+    template_name = 'music/genre-update.html'
+
+    form_class = TypeMusicsForm
 
