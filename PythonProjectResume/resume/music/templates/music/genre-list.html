@@ -5,14 +5,10 @@
     <div class="TypeMusics">
         <h3>
             <a href="{% url 'genre-details' el.id %}" class="btn btn-view">
-                {{ el.name_type }}
-            </a>
-        </h3>
-        <p>
-            <a href="{% url 'genre-details' el.id %}" class="btn btn-view">
+                {{ el.name_type }}<br>
                 {{ el.description }}
             </a>
-        </p>
+        </h3>
     </div>
     {% endfor %}
 {% endblock %}

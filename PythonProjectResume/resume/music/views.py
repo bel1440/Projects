@@ -27,7 +27,7 @@ def add_music(request):
         form_music = SongsForm(request.POST)
         if form_music.is_valid():
             form_music.save()
-            return redirect('music')
+            return redirect('list')
         else:
             error = 'Ошибка в заполнении данных'
 

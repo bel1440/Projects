@@ -76,7 +76,7 @@ body{
 .container{
     display: flex;
     justify-content: space-around;
-    height: 593px;
+    height: 850px;
     margin-left: 10px;
     margin-right: 15px;
 }
@@ -147,6 +147,15 @@ body{
 
 }
 
+.functions_list{
+    display: flex;
+    flex-direction: column;
+}
+
+.functions_items{
+    display: flex;
+}
+
 .functions_items_add{
     color: #e6e6e6;
     transition: color 0.2ms ease;
@@ -158,18 +167,6 @@ body{
     transform: scale(1.1);
 }
 
-.Songs a{
-    color: #e6e6e6;
-}
-
-.Singers a{
-    color: #e6e6e6;
-}
-
-.TypeMusics a{
-    color: #e6e6e6;
-}
-
 .form-control-view{
     margin-left: 15px;
     margin-top: 15px;
@@ -178,25 +175,46 @@ body{
     color: #e6e6e6;
 }
 
+.btn-view{
+    display: block; /* Превращаем ссылку в блочный элемент */
+    width: 100%; /* Занимаем всю ширину родительского div */
+    height: 100%; /* Занимаем всю высоту родительского div */
+    align-text: justify;
+    line-height: 30px; /* Выравниваем текст по вертикали */
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #e6e6e6;
+}
+
+.btn-view:hover{
+    background-color: dimgrey;
+    border-radius: 40px;
+}
+
 .Songs{
+    width: 1380px;
+    height: 40px;
     margin-left: 15px;
-    margin-top: 15px;
+    margin-top: 10px;
     font-family: URW Chancery L, cursive;
     font-size: 25px;
 }
 
 .Singers{
+    width: 1380px;
+    height: 40px;
     margin-left: 15px;
-    margin-top: 15px;
+    margin-top: 10px;
     font-family: URW Chancery L, cursive;
     font-size: 25px;
 }
 
 .TypeMusics{
+    width: 1380px;
+    height: 100px;
     margin-left: 15px;
     margin-top: 15px;
     font-family: URW Chancery L, cursive;
-    font-size: 10px;
+    font-size: 25px;
 }
 
 
