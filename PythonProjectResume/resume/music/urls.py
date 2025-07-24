@@ -17,5 +17,6 @@ urlpatterns = [
     path('singers/<int:pk>/update', views.SingerUpdateView.as_view(), name='singer-update'),
     path('singers/<int:pk>/delete', views.SingerDeleteView.as_view(), name='singer-delete'),
     path('genre/<int:pk>/update', views.GenreUpdateView.as_view(), name='genre-update'),
-    path('genre/<int:pk>/delete', views.GenreDeleteView.as_view(), name='genre-delete')
+    path('genre/<int:pk>/delete', views.GenreDeleteView.as_view(), name='genre-delete'),
+    # path('add-music/upload', views.upload_file, name='upload')
 ]

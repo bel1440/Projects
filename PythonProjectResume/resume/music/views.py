@@ -2,6 +2,19 @@ from django.shortcuts import render, redirect
 from .models import Singers, Songs, TypeMusics
 from .forms import SongsForm, SingersForm, TypeMusicsForm
 from django.views.generic import DetailView, UpdateView, DeleteView
+from django.core.files.storage import FileSystemStorage
+
+
+# def upload_file(request):
+#     if request.method == 'POST' and request.FILES['my_file']:
+#         myfile = request.FILES['my_file']
+#         fs = FileSystemStorage()
+#         filename = fs.save(myfile.name, myfile)
+#         uploaded_file_url = fs.url(filename)
+#         return render(request, 'music/add-music.html', {
+#             'uploaded_file_url': uploaded_file_url
+#         })
+#     return render(request, 'music/add-music.html')
 
 def music(request):
     Types = TypeMusics.objects.all()
@@ -24,7 +37,7 @@ def singers(request):
 def add_music(request):
     error = ''
     if request.method == 'POST':
-        form_music = SongsForm(request.POST)
+        form_music = SongsForm(request.POST, request.FILES)
         if form_music.is_valid():
             form_music.save()
             return redirect('list')
@@ -46,6 +59,7 @@ class MusicDetailView(DetailView):
 
 class MusicUpdateView(UpdateView):
     model = Songs
+    success_url = '/music/list/'
     template_name = 'music/music-update.html'
     form_class = SongsForm
 
@@ -80,7 +94,7 @@ class SingerDetailView(DetailView):
 class SingerUpdateView(UpdateView):
     model = Singers
     template_name = 'music/singer-update.html'
-
+    success_url = '/music/singers/'
     form_class = SingersForm
 
 class SingerDeleteView(DeleteView):
@@ -119,6 +133,6 @@ class GenreDeleteView(DeleteView):
 class GenreUpdateView(UpdateView):
     model = TypeMusics
     template_name = 'music/genre-update.html'
-
+    success_url = '/music/genre/'
     form_class = TypeMusicsForm
 

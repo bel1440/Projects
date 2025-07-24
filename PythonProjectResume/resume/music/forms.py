@@ -1,15 +1,19 @@
 from .models import Singers, Songs, TypeMusics
-from django.forms import ModelForm, TextInput
+from django.forms import ModelForm, TextInput, FileInput
 
 class SongsForm(ModelForm):
     class Meta:
         model = Songs
-        fields = ['name_song']
+        fields = ['name_song', 'file']
 
         widgets = {
             'name_song': TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Название песни'
+            }),
+            'file': FileInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Путь к песне'
             })
         }
 

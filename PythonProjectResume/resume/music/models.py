@@ -27,6 +27,7 @@ class TypeMusics(models.Model):
 
 class Songs(models.Model):
     name_song = models.CharField('Название песни', max_length=250)
+    file = models.FileField('Путь', upload_to='songs/')
     def __str__(self):
         return self.name_song
 
