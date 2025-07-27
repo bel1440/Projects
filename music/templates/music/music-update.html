@@ -1,0 +1,12 @@
+{% extends 'music/music.html' %}
+
+{% block content-right %}
+  <div class="features">
+    <form method="post" class="form-control">
+      {% csrf_token %}
+      {{ form.name_song }}
+      <span>{{ error }}</span>
+      <button class="btn btn-success" type="submit">Изменить</button>
+    </form>
+  </div>
+{% endblock %}

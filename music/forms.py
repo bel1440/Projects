@@ -1,0 +1,46 @@
+from .models import Singers, Songs, TypeMusics
+from django.forms import ModelForm, TextInput, FileInput
+
+class SongsForm(ModelForm):
+    class Meta:
+        model = Songs
+        fields = ['name_song', 'file']
+
+        widgets = {
+            'name_song': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Название песни'
+            }),
+            'file': FileInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Путь к песне'
+            })
+        }
+
+class SingersForm(ModelForm):
+    class Meta:
+        model = Singers
+        fields = ['name_singer']
+
+        widgets = {
+            'name_singer': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Имя исполнителя'
+            })
+        }
+
+class TypeMusicsForm(ModelForm):
+    class Meta:
+        model = TypeMusics
+        fields = ['name_type', 'description']
+
+        widgets = {
+            'name_type': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Название жанра'
+            }),
+            'description': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Описание жанра'
+            })
+        }
