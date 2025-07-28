@@ -1,46 +1,62 @@
 from .models import Singers, Songs, TypeMusics
-from django.forms import ModelForm, TextInput, FileInput
+from django.forms import ModelForm, TextInput, FileInput, ClearableFileInput
 
 class SongsForm(ModelForm):
     class Meta:
         model = Songs
-        fields = ['name_song', 'file']
+        fields = ['name_song', 'file', 'img_song']
 
         widgets = {
             'name_song': TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Название песни'
+                'placeholder': 'название песни'
             }),
             'file': FileInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Путь к песне'
+                'placeholder': 'путь к песне'
+            }),
+            'img_song': FileInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'загрузите фото'
             })
         }
 
 class SingersForm(ModelForm):
     class Meta:
         model = Singers
-        fields = ['name_singer']
+        fields = ['name_singer', 'description', 'img_singer']
 
         widgets = {
             'name_singer': TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Имя исполнителя'
+                'placeholder': 'имя исполнителя'
+            }),
+            'description': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'описание жанра'
+            }),
+            'img_singer': FileInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'загрузите фото'
             })
         }
 
 class TypeMusicsForm(ModelForm):
     class Meta:
         model = TypeMusics
-        fields = ['name_type', 'description']
+        fields = ['name_type', 'description', 'img_type']
 
         widgets = {
             'name_type': TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Название жанра'
+                'placeholder': 'название жанра'
             }),
             'description': TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Описание жанра'
+                'placeholder': 'описание жанра'
+            }),
+            'img_type': FileInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'загрузите фото'
             })
         }

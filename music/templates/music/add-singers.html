@@ -2,7 +2,7 @@
 
 {% block content-right %}
   <div class="features">
-    <form method="post" class="form-control">
+    <form method="post" class="form-control" enctype="multipart/form-data">
       {% csrf_token %}
       {{ form_singer }}
       <span>{{ error }}</span>

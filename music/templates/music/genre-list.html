@@ -1,14 +1,18 @@
 {% extends 'music/music.html' %}
 
 {% block content-right %}
-  {% for el in Types %}
-    <div class="TypeMusics">
-        <h3>
-            <a href="{% url 'genre-details' el.id %}" class="btn btn-view">
-                {{ el.name_type }}<br>
-                {{ el.description }}
-            </a>
-        </h3>
+    <div class="general">
+      {% for el in Types %}
+            <div class="TypeMusics">
+                <section class="img-type">
+                    <img src="{{ el.img_type.url }}" alt="{{ el.name_type }}">
+                </section>
+                <section class="info-type">
+                    <a href="{% url 'genre-details' el.id %}" class="btn btn-view">
+                        {{ el.name_type }}
+                    </a>
+                </section>
+            </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 {% endblock %}

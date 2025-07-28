@@ -59,7 +59,7 @@ class MusicDeleteView(DeleteView):
 def add_singer(request):
     error = ''
     if request.method == 'POST':
-        form_singer = SingersForm(request.POST)
+        form_singer = SingersForm(request.POST, request.FILES)
         if form_singer.is_valid():
             form_singer.save()
             return redirect('singer')
@@ -93,7 +93,7 @@ class SingerDeleteView(DeleteView):
 def add_genre(request):
     error = ''
     if request.method == 'POST':
-        form_genre = TypeMusicsForm(request.POST)
+        form_genre = TypeMusicsForm(request.POST, request.FILES)
         if form_genre.is_valid():
             form_genre.save()
             return redirect('genre')

@@ -1,7 +1,9 @@
 from django.db import models
 
 class Singers(models.Model):
-    name_singer = models.CharField('Имя исполнителя', max_length=250)
+    img_singer = models.ImageField('Картинка', upload_to='img_singer/', blank=True, null=True)
+    name_singer = models.CharField('Имя исполнителя', max_length=50)
+    description = models.CharField('Описание', max_length=1000)
     def __str__(self):
         return self.name_singer
 
@@ -13,8 +15,9 @@ class Singers(models.Model):
         verbose_name_plural = 'Исполнители'
 
 class TypeMusics(models.Model):
-    name_type = models.CharField('Жанр', max_length=250)
-    description = models.CharField('Описание', max_length=250)
+    img_type = models.ImageField('Картинка', upload_to='img_type/', blank=True, null=True)
+    name_type = models.CharField('Жанр', max_length=50)
+    description = models.CharField('Описание', max_length=1000)
     def __str__(self):
         return self.name_type
 
@@ -26,7 +29,8 @@ class TypeMusics(models.Model):
         verbose_name_plural = 'Жанры'
 
 class Songs(models.Model):
-    name_song = models.CharField('Название песни', max_length=250)
+    img_song = models.ImageField('Картинка', upload_to='img_song/', blank=True, null=True)
+    name_song = models.CharField('Название песни', max_length=50)
     file = models.FileField('Путь', upload_to='')
     def __str__(self):
         return self.name_song
